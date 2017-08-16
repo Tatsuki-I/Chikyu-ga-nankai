@@ -1,0 +1,43 @@
+name:                Chikyu-ga-nankai
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/Tatsuki-I/Chikyu-ga-nankai#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Tatsuki-I
+maintainer:          tatsuki.devel@gmail.com
+copyright:           2017 Tatsuki-I
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     ChikyuGaNankai
+  build-depends:       base >= 4.7 && < 5
+                     , time
+  default-language:    Haskell2010
+
+executable 地球が何回回った日
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , Chikyu-ga-nankai
+                     , time
+  default-language:    Haskell2010
+
+test-suite Chikyu-ga-nankai-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , Chikyu-ga-nankai
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/Tatsuki-I/Chikyu-ga-nankai
